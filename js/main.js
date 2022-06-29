@@ -57,39 +57,24 @@ elSelect.addEventListener('change', function () {
 
 
 let elTest = document.querySelector(".js-select")
- 
-// function pic(arr){
-//     let c = []
 
-//     for (i of arr){
-            
-//         c.push(i.type[0])
-        
-//         var newIt = document.createElement('option');
-        
-//         newIt.textContent = i.type;
-        
-//         elTest.appendChild(newIt); 
-//     }
-    
-//     console.log(new Set (c));
-// }
-//      pic(pokemons)
+let myArray = [];
+
+for (item of pokemons) {
+  myArray.push(...item.type);
+}
+
+let mySet = new Set(myArray);
+
+for (const item of Array.from(mySet)) {
+  let li = document.createElement("option");
+  li.textContent = item;
+  elTest.appendChild(li);
+}
 
 
 
 
 
-// console.log(option);
 
 
-
-// let pocam =  new Set([])
-// // for (i of pokemons){
-// //     pocam.push(i.type) 
-// // }
-
-// let uniq = [new Set(pocam) ];
-
-
-// console.log(uniq);
